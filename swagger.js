@@ -14,35 +14,23 @@ const options = {
         ],
         components: {
             schemas: {
-                Categoria: {
+                Cartelera: {
                     type: 'object',
                     properties: {
-                        ID_Categoria: { type: 'integer', example: 1 },
-                        Nombre: { type: 'string', example: 'Bebidas' },
-                        Descripcion: { type: 'string', example: 'Categoría de bebidas' }
-                    }
-                },
-                Cliente: {
-                    type: 'object',
-                    properties: {
-                        ID_Cliente: { type: 'integer', example: 1 },
-                        Nombre: { type: 'string', example: 'Juan Pérez' },
-                        Email: { type: 'string', example: 'juan@mail.com' }
-                    }
-                },
-                Pedido: {
-                    type: 'object',
-                    properties: {
-                        ID_Pedido: { type: 'integer', example: 1 },
-                        Fecha: { type: 'string', format: 'date-time', example: '2025-09-27T10:00:00Z' },
-                        ID_Cliente: { type: 'integer', example: 1 },
-                        Total: { type: 'number', example: 250.50 }
+                        imdbID: { type: 'string', example: '80000' },
+                        Title: { type: 'string', example: 'Titanes del Atlantico' },
+                        Year: { type: 'string', example: '2013' },
+                        Type: { type: 'string', example: 'Ciencia Ficcion' },
+                        Poster: { type: 'string', example: 'https://demo/demoimages.png' },
+                        Estado: { type: 'boolean', example: true },
+                        description: { type: 'string', example: 'La humanidad se transforma en robots gigantes para defender la costa este de los monstruos que surgen del fondo del mar.' },
+                        Ubication: { type: 'string', example: 'POPCINEMA' }
                     }
                 }
             }
         }
     },
-    apis: [path.join(__dirname, 'routes/*.js')],
+    apis: [path.join(__dirname, 'routes/cartelera.js')],
 };
 
 const openapiSpecification = swaggerJsdoc(options);

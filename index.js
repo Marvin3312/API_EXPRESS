@@ -13,23 +13,18 @@ app.use(express.json());
 // Conectar a la base de datos
 connectDB();
 
-// Swagger
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(openapiSpecification));
-
 // Rutas
-app.use('/api/categorias', require('./routes/categorias'));
-app.use('/api/clientes', require('./routes/clientes'));
-app.use('/api/pedidos', require('./routes/pedidos'));
+// app.use('/api/categorias', require('./routes/categorias'));
+// app.use('/api/clientes', require('./routes/clientes'));
+// app.use('/api/pedidos', require('./routes/pedidos'));
+app.use('/api/cartelera', require('./routes/cartelera'));
 
-// Redirigir a la documentación de la API
-app.get('/', (req, res) => {
-    res.redirect('/api-docs');
-});
+// Swagger UI
+app.use('/', swaggerUi.serve, swaggerUi.setup(openapiSpecification));
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
-    console.log(`Swagger documentation is available at http://localhost:${port}/api-docs`);
-    console.log(`Access it directly at http://localhost:${port}`);
+    console.log(`Swagger documentation is available at http://localhost:${port}/`);
 });
 process.on('uncaughtException', (err) => {
     console.error('❌ Uncaught Exception:', err);
