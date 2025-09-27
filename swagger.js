@@ -10,7 +10,9 @@ const options = {
             description: 'Una API de ejemplo para el parcial de Desarrollo Web',
         },
         servers: [
-            { url: 'http://localhost:3000' },
+            {
+                url: process.env.RENDER_URL || 'http://localhost:3000'
+            }
         ],
         components: {
             schemas: {
