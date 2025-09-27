@@ -11,7 +11,12 @@ const options = {
         },
         servers: [
             {
-                url: process.env.RENDER_URL || 'http://localhost:3000'
+                url: 'https://api-express-z8gp.onrender.com',
+                description: 'Servidor de Producción (Render)'
+            },
+            {
+                url: 'http://localhost:3000',
+                description: 'Servidor de Desarrollo Local'
             }
         ],
         components: {

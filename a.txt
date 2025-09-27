@@ -1,0 +1,69 @@
+API de Ejemplo
+ 1.0.0 
+OAS 3.0
+Una API de ejemplo para el parcial de Desarrollo Web
+
+Servers
+
+http://localhost:3000
+default
+
+
+GET
+/api/cartelera
+Obtener todas las películas disponibles
+
+Parameters
+Cancel
+No parameters
+
+Execute
+Clear
+Responses
+Curl
+
+curl -X 'GET' \
+  'http://localhost:3000/api/cartelera' \
+  -H 'accept: application/json'
+Request URL
+http://localhost:3000/api/cartelera
+Server response
+Code	Details
+Undocumented
+Failed to fetch.
+Possible Reasons:
+
+CORS
+Network Failure
+URL scheme must be "http" or "https" for CORS request.
+Responses
+Code	Description	Links
+200	
+Lista de películas
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+[
+  {
+    "imdbID": "80000",
+    "Title": "Titanes del Atlantico",
+    "Year": "2013",
+    "Type": "Ciencia Ficcion",
+    "Poster": "https://demo/demoimages.png",
+    "Estado": true,
+    "description": "La humanidad se transforma en robots gigantes para defender la costa este de los monstruos que surgen del fondo del mar.",
+    "Ubication": "POPCINEMA"
+  }
+]
+No links
+500	
+Error interno del servidor
+
+No links
+
+Schemas
+Cartelera
